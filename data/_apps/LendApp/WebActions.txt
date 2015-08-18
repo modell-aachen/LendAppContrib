@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1436446396" format="1.1" version="8"}%
+%META:TOPICPARENT{name="Templates"}%
+
+   * <a href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/LendAUTOINC000?template=%WEB%.LendEdit;templatetopic=%WEB%.LendTemplate;formtemplate=LendForm;t=%GMTIME{$epoch}%">%MAKETEXT{"New Lend Object"}%</a>
+
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
