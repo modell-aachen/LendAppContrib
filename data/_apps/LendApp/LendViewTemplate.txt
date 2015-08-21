@@ -16,5 +16,6 @@
 		<div class=\"lendFormElement\">$value</div>
 		<div class=\"clear\"></div>"
 }%  
+%DNDUPLOAD{height="200px" width="100%"}%
 </div>
 %TMPL:END%
