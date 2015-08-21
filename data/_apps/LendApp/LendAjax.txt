@@ -1,0 +1,19 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="pending" date="1427369215" format="1.1" version="24"}%
+<verbatim>
+
+%STARTSECTION{"select2::people"}%<literal>
+	%LDAPUSERS{
+		include="%URLPARAM{"q"}%.*"
+		hideunknown="off"
+		header="{\"results\":["
+		format="{\"id\":\"$wikiName\",\"text\":\"$wikiName\"}"
+		footer="]}"
+		sep=","
+	}%
+</literal>%ENDSECTION{"select2::people"}%
+
+</verbatim>
+
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
+

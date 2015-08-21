@@ -1,0 +1,20 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1439310554" format="1.1" reprev="2" version="2"}%
+%META:TOPICPARENT{name="WebHome"}%
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"head"}%
+%TMPL:PREV%
+<link rel='stylesheet' href='%PUBURLPATH%/System/LendApp/css/lend.css' />
+%TMPL:END%
+
+%TMPL:DEF{"content"}%
+<div class="widgetBlockTitle">Investitionsantrag</div>
+<div class="widgetBlockContent">%RENDERFORDISPLAY{ 
+	fields="Besitzer, Produktname, Kategorie, Zustand, Reservierung" 
+	format="
+		<div class=\"lendFormLabel\">$xlatedescription</div>
+		<div class=\"lendFormElement\">$value</div>
+		<div class=\"clear\"></div>"
+}%  
+</div>
+%TMPL:END%

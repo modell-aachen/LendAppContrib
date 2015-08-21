@@ -1,0 +1,10 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1437726692" format="1.1" reprev="9" version="2"}%
+| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
+| Besitzer | select2 | 50 |%SCRIPTURL{view}%/%WEB%/LendAjax?contenttype=text/plain;skin=text;section=select2::people; | Owner | M |
+| Produktname | text | 100 | | Product Name | M |
+| Kategorie | select | 1 | Beruflich, Privat | Category | |
+| Zustand | select | 1 | Neu, Gebraucht, Abgenutzt, Kaputt | Condition | |
+| Reservierung | select2 | 50 | %SCRIPTURL{view}%/%WEB%/LendAjax?contenttype=text/plain;skin=text;section=select2::people; | Reserved | |
+
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%

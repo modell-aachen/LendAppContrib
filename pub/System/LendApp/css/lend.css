@@ -1,0 +1,18 @@
+.lendFormLabel {
+	float: left;
+    padding: 8px;
+	color: #999;
+    font-weight: bold;
+	width: 250px;
+}
+.lendFormElement {
+	float: left;
+	padding: 8px;
+	width: 500px;
+}
+.widgetBlockContent {
+	background-color: #f8fcff;
+}
+.clear {
+	clear:both;
+}

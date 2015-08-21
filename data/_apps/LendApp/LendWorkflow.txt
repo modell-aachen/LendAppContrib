@@ -1,0 +1,40 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1426694764" format="1.1" reprev="12" version="30"}%
+---++ Defaults
+| *State type* | *Left tab* | *Right tab* | *Approved* |
+| approved | Approved Page | Discussion | 1 |
+| draft | Approved Page | Draft | 0 |
+| discussion | Approved Page | Discussion | 0 |
+
+---++ States
+%EDITTABLE{}%
+| *State* | *Allow Edit* | *Allow Move* | *Allow Comment* | *Message* | *State Type* | *Progress* |
+| NEW | LOGGEDIN | LOGGEDIN | LOGGEDIN | Neues Objekt | draft | 000 |
+| VERFUEGBAR | %QUERY{fields[name="Besitzer"].value}%  | %QUERY{fields[name="Besitzer"].value}%  | LOGGEDIN | Das Objekt ist verfügbar | draft | 000 |
+| RESERVIERT | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Besitzer"].value}% | LOGGEDIN | Das Objekt ist reserviert | draft | 000 |
+| VERLIEHEN | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Besitzer"].value}% | LOGGEDIN | Das Objekt ist verliehen | draft | 000 |
+| DEFEKT | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Besitzer"].value}% | LOGGEDIN | Das Objekt ist defekt | draft | 000 |
+| LOESCHEN | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Besitzer"].value}% | LOGGEDIN | Das Objekt ist defekt | approved | 000 |
+ 
+---++ Transitions
+%EDITTABLE{}%
+| *State* | *Action* | *Next State* | *Allowed* | *Notify* | *Condition* | *Warning* | *Attribute* | *Tasked* | *Task description* | *Due* |
+| NEW | Objekt anlegen | VERFUEGBAR | LOGGEDIN | %QUERY{fields[name="Besitzer"].value}% | | | NEW | | | |
+| VERFUEGBAR | Objekt reservieren | RESERVIERT | LOGGEDIN | %QUERY{fields[name="Besitzer"].value}% | | | REMARK | | | |
+| VERFUEGBAR | Objekt verleihen | VERLIEHEN | LOGGEDIN | %QUERY{fields[name="Besitzer"].value}% | | | REMARK | | | |
+| VERFUEGBAR | Objekt ist defekt | DEFEKT | LOGGEDIN | %QUERY{fields[name="Besitzer"].value}% | | | REMARK | | | |
+| RESERVIERT | Objekt freigeben | VERFUEGBAR | %QUERY{fields[name="Besitzer"].value}%, %QUERY{fields[name="Reservierung"].value}% | %QUERY{fields[name="Besitzer"].value}%, %QUERY{fields[name="Reservierung"].value}% | | | REMARK | | | |
+| RESERVIERT | Objekt verleihen | VERLIEHEN | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Reservierung"].value}% | | | REMARK | | | |
+| RESERVIERT | Objekt ist defekt | DEFEKT | %QUERY{fields[name="Besitzer"].value}%, %QUERY{fields[name="Reservierung"].value}% | %QUERY{fields[name="Besitzer"].value}% | | | REMARK | | | |
+| VERLIEHEN | Objekt freigeben | VERFUEGBAR | %QUERY{fields[name="Besitzer"].value}%, %QUERY{fields[name="Reservierung"].value}% | %QUERY{fields[name="Besitzer"].value}%, %QUERY{fields[name="Reservierung"].value}% | | | REMARK | | | |
+| VERLIEHEN | Objekt ist defekt | DEFEKT | %QUERY{fields[name="Besitzer"].value}%, %QUERY{fields[name="Reservierung"].value}% | %QUERY{fields[name="Besitzer"].value}% | | | REMARK | | | |
+| DEFEKT | Objekt ist repariert | VORPRUEFUNG | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Besitzer"].value}% | | | REMARK | | | |
+| DEFEKT | Objekt entfernen | LOESCHEN | %QUERY{fields[name="Besitzer"].value}% | %QUERY{fields[name="Besitzer"].value}% | | | DISCARD | | | |
+
+ * Set NOWYSIWYG=1
+ * Set WORKFLOW=
+ * Set VIEW_TEMPLATE = WorkflowView
+ * Set ALLOWTOPICCHANGE = AdminGroup
+
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
+

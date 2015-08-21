@@ -1,4 +1,10 @@
 data/System/LendAppContrib.txt 0644
+data/_apps/LendApp/LendForm.txt 0644
+data/_apps/LendApp/LendTemplate.txt 0644
+data/_apps/LendApp/LendEditTemplate.txt 0644
+data/_apps/LendApp/LendViewTemplate.txt 0644
+data/_apps/LendApp/LendWorkflow.txt 0644
+data/_apps/LendApp/LendAjax.txt 0644
 data/_apps/LendApp/WebActions.txt 0644
 data/_apps/LendApp/WebAtom.txt 0644
 data/_apps/LendApp/WebChanges.txt 0644
@@ -16,4 +22,5 @@ data/_apps/LendApp/WebSearchAdvanced.txt 0644
 data/_apps/LendApp/WebStatistics.txt 0644
 data/_apps/LendApp/WebTopicList.txt 0644
 lib/Foswiki/Contrib/LendAppContrib.pm 0644
+pub/System/LendApp/css/lend.css 0644
 locale/LendAppContrib/de.po 0644
