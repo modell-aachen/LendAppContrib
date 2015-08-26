@@ -3,8 +3,19 @@
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"content"}%
-	
+	<div class="widgetBlockTitle">%MAKETEXT{"Investment Proposals"}%</div>
+	<div class="widgetBlockContent">
+		%TABPANE{class="simple"}%
+			%TAB{"Alle Objekte" url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/tag?name=INCLUDE;param=%WEB%.WebHomeViewTemplate;section=alle_objekte;"}%%ENDTAB%
+		%ENDTABPANE%
+	</div>
 %TMPL:END%
+
+<!--
+%STARTSECTION{name="alle_objekte"}%
+TEST
+%ENDSECTION{name="alle_objekte"}%
+-->
 
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
